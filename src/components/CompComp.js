@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { sellComp } from "../redux/actions/actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { sellComp } from '../redux/actions/actions';
 
 const CompComp = (props) => {
   const [number, setNumber] = React.useState(1);
@@ -9,7 +9,7 @@ const CompComp = (props) => {
       <h2>Computers [Pure Redux]</h2>
       <h3>
         Number of Computers :
-        <span className="number">{props.numberOfComps}</span>
+        <span className="number">{props.numberOfComp}</span>
       </h3>
       <input
         type="number"
@@ -17,13 +17,7 @@ const CompComp = (props) => {
         onChange={(e) => setNumber(e.target.value)}
       />
       <br />
-      <button
-        onClick={() => {
-          console.log(number);
-          console.log(props.numberOfComps);
-          props.sellComp(number);
-        }}
-      >
+      <button onClick={() => props.sellComp(number)}>
         Sell {number} Comps
       </button>
     </div>
